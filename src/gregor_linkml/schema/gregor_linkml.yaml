@@ -21,76 +21,1809 @@ default_range: string
 imports:
   - linkml:types
 
-classes:
-
-  NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
-    slots:
-      - id
-      - name
-      - description
-    class_uri: schema:Thing
-
-  Person:
-    is_a: NamedThing
-    description: >-
-      Represents a Person
-    slots:
-      - primary_email
-      - birth_date
-      - age_in_years
-      - vital_status
-    slot_usage:
-      primary_email:
-        pattern: "^\\S+@[\\S+\\.]+\\S+"
-
-  PersonCollection:
-    tree_root: true
-    description: >-
-      A holder for Person objects
-    attributes:
-      entries:
-        range: Person
-        multivalued: true
-        inlined: true
-
-slots:
-  id:
-    identifier: true
-    slot_uri: schema:identifier
-    range: uriorcurie
-    description: A unique identifier for a thing
-  name:
-    slot_uri: schema:name
-    description: A human-readable name for a thing
-  description:
-    slot_uri: schema:description
-    description: A human-readable description for a thing
-  primary_email:
-    slot_uri: schema:email
-    description: The main email address of a person
-  birth_date:
-    slot_uri: schema:birthDate
-    range: date
-    description: Date on which a person is born
-  age_in_years:
-    range: integer
-    description: Number of years since birth
-  vital_status:
-    range: PersonStatus
-    description: living or dead status
-
+id: https://example.org/gregor
+name: GREGoR-Data-Model
+version: '1.5'
+description: Data model for the GREGoR consortium
 enums:
-  PersonStatus:
+  Gregor_centerEnum:
     permissible_values:
-      ALIVE:
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        description: the vital status is not known
-        todos:
-          - map this to an ontology
+      BCM:
+      BROAD:
+      CNH_I:
+      UCI:
+      UW_CRDR:
+      GSS:
+      UW_DCC:
+  Consent_codeEnum:
+    permissible_values:
+      GRU:
+      HMB:
+  RecontactableEnum:
+    permissible_values:
+      'Yes':
+      'No':
+  Proband_relationshipEnum:
+    permissible_values:
+      Self:
+      Mother:
+      Father:
+      Sibling:
+      Child:
+      Maternal Half Sibling:
+      Paternal Half Sibling:
+      Maternal Grandmother:
+      Maternal Grandfather:
+      Paternal Grandmother:
+      Paternal Grandfather:
+      Maternal Aunt:
+      Maternal Uncle:
+      Paternal Aunt:
+      Paternal Uncle:
+      Niece:
+      Nephew:
+      Maternal 1st Cousin:
+      Paternal 1st Cousin:
+      Other:
+      Unknown:
+  SexEnum:
+    permissible_values:
+      Female:
+      Male:
+      Unknown:
+  Reported_raceEnum:
+    permissible_values:
+      American Indian or Alaska Native:
+      Asian:
+      Black or African American:
+      Native Hawaiian or Other Pacific Islander:
+      Middle Eastern or North African:
+      White:
+  Reported_ethnicityEnum:
+    permissible_values:
+      Hispanic or Latino:
+      Not Hispanic or Latino:
+  Affected_statusEnum:
+    permissible_values:
+      Affected:
+      Unaffected:
+      Possibly affected:
+      Unknown:
+  Solve_statusEnum:
+    permissible_values:
+      Solved:
+      Partially solved:
+      Probably solved:
+      Unsolved:
+      Unaffected:
+  Missing_variant_caseEnum:
+    permissible_values:
+      'Yes':
+      'No':
+      Unknown:
+  ConsanguinityEnum:
+    permissible_values:
+      None suspected:
+      Suspected:
+      Present:
+      Unknown:
+  PresenceEnum:
+    permissible_values:
+      Present:
+      Absent:
+      Unknown:
+  OntologyEnum:
+    permissible_values:
+      HPO:
+      MONDO:
+      OMIM:
+      ORPHANET:
+      SNOMED:
+      ICD10:
+  Onset_age_rangeEnum:
+    permissible_values:
+      HP:0003581:
+      HP:0030674:
+      HP:0011463:
+      HP:0003577:
+      HP:0025708:
+      HP:0011460:
+      HP:0011461:
+      HP:0003593:
+      HP:0025709:
+      HP:0003621:
+      HP:0034199:
+      HP:0003584:
+      HP:0025710:
+      HP:0003596:
+      HP:0003623:
+      HP:0410280:
+      HP:4000040:
+      HP:0034198:
+      HP:0034197:
+      HP:0011462:
+  Additional_modifiersEnum:
+    permissible_values:
+      HP:0025292:
+      HP:0011009:
+      HP:0025308:
+      HP:0025307:
+      HP:0025306:
+      HP:0003581:
+      HP:0011420:
+      HP:0003831:
+      HP:0025285:
+      HP:0032525:
+      HP:0025286:
+      HP:0025254:
+      HP:0032526:
+      HP:0025257:
+      HP:0032503:
+      HP:0025256:
+      HP:0032522:
+      HP:0025255:
+      HP:0030674:
+      HP:0033820:
+      HP:4000052:
+      HP:0025287:
+      HP:0012832:
+      HP:0012827:
+      HP:0033815:
+      HP:0030645:
+      HP:0033816:
+      HP:0032535:
+      HP:0011463:
+      HP:0011010:
+      HP:0031797:
+      HP:0045088:
+      HP:4000051:
+      HP:4000048:
+      HP:4000047:
+      HP:0003577:
+      HP:0011421:
+      HP:0033763:
+      HP:0003819:
+      HP:0100613:
+      HP:0001522:
+      HP:0033765:
+      HP:0033764:
+      HP:0025294:
+      HP:0020034:
+      HP:4000053:
+      HP:0012839:
+      HP:0045089:
+      HP:0025293:
+      HP:0025302:
+      HP:0025282:
+      HP:0025708:
+      HP:0011460:
+      HP:0025303:
+      HP:0032365:
+      HP:0032502:
+      HP:0032501:
+      HP:0025315:
+      HP:0032534:
+      HP:0032542:
+      HP:0032500:
+      HP:0011461:
+      HP:0031914:
+      HP:0030650:
+      HP:4000042:
+      HP:0012837:
+      HP:4000043:
+      HP:0025295:
+      HP:0003829:
+      HP:0003593:
+      HP:0003587:
+      HP:0025709:
+      HP:0032539:
+      HP:0032540:
+      HP:0003621:
+      HP:0034199:
+      HP:0003584:
+      HP:0025710:
+      HP:0025275:
+      HP:0012831:
+      HP:0012835:
+      HP:0012838:
+      HP:0025291:
+      HP:0003596:
+      HP:0030648:
+      HP:0025279:
+      HP:0012825:
+      HP:0033817:
+      HP:0045090:
+      HP:0005268:
+      HP:0012826:
+      HP:0025296:
+      HP:0040006:
+      HP:0030651:
+      HP:0003811:
+      HP:0003623:
+      HP:0025301:
+      HP:0003680:
+      HP:4000046:
+      HP:0003674:
+      HP:4000050:
+      HP:0003679:
+      HP:0025280:
+      HP:0030647:
+      HP:0033814:
+      HP:0410280:
+      HP:0030649:
+      HP:0033813:
+      HP:0033819:
+      HP:0025304:
+      HP:0030646:
+      HP:0003812:
+      HP:0031450:
+      HP:0012830:
+      HP:0032544:
+      HP:0034241:
+      HP:0012829:
+      HP:0003676:
+      HP:0025297:
+      HP:0012840:
+      HP:4000040:
+      HP:0025305:
+      HP:0003678:
+      HP:0031796:
+      HP:0031375:
+      HP:0033818:
+      HP:0012834:
+      HP:0034198:
+      HP:4000049:
+      HP:0033349:
+      HP:0012828:
+      HP:0012824:
+      HP:0025281:
+      HP:0025284:
+      HP:0003677:
+      HP:0012836:
+      HP:4000045:
+      HP:0031915:
+      HP:0003826:
+      HP:0011011:
+      HP:0011008:
+      HP:0025283:
+      HP:0034197:
+      HP:0025153:
+      HP:4000044:
+      HP:0025204:
+      HP:0033185:
+      HP:0033032:
+      HP:0500261:
+      HP:0025205:
+      HP:0025208:
+      HP:0033789:
+      HP:0025206:
+      HP:0025207:
+      HP:0025334:
+      HP:0025211:
+      HP:0025227:
+      HP:0025377:
+      HP:0025212:
+      HP:0034060:
+      HP:0025215:
+      HP:0033793:
+      HP:0025209:
+      HP:0025213:
+      HP:0025210:
+      HP:0500260:
+      HP:0025214:
+      HP:0025216:
+      HP:0025217:
+      HP:0025218:
+      HP:0033184:
+      HP:0031167:
+      HP:0025220:
+      HP:0034195:
+      HP:0031135:
+      HP:0025221:
+      HP:0025222:
+      HP:0025223:
+      HP:0025224:
+      HP:0025225:
+      HP:0025226:
+      HP:0025228:
+      HP:0025219:
+      HP:0025229:
+      HP:0033198:
+      HP:0012833:
+      HP:0025290:
+      HP:0003828:
+      HP:0003682:
+      HP:0410401:
+      HP:0011462:
+      MONDO:0021125:
+      MONDO:0021135:
+      MONDO:0021139:
+      MONDO:0021149:
+      MONDO:0045034:
+      MONDO:0045040:
+      MONDO:0100355:
+      MONDO:0700004:
+      MONDO:0100369:
+      MONDO:0700061:
+      MONDO:0024488:
+      MONDO:0021126:
+      MONDO:0021136:
+      MONDO:0021137:
+      MONDO:0021140:
+      MONDO:0021141:
+      MONDO:0021151:
+      MONDO:0021152:
+      MONDO:0045036:
+      MONDO:0045035:
+      MONDO:0022202:
+      MONDO:0045042:
+      MONDO:0100356:
+      MONDO:0100357:
+      MONDO:0700005:
+      MONDO:0700006:
+      MONDO:0100427:
+      MONDO:0100426:
+      MONDO:0700063:
+      MONDO:0700062:
+      MONDO:0024489:
+      MONDO:0021128:
+      MONDO:0021127:
+      MONDO:0024497:
+      MONDO:0024495:
+      MONDO:0024490:
+      MONDO:0024496:
+  SyndromicEnum:
+    permissible_values:
+      syndromic:
+      non-syndromic:
+  Variant_typeEnum:
+    permissible_values:
+      SNV/INDEL:
+      RE:
+      SV:
+  Sv_typeEnum:
+    permissible_values:
+      BND:
+      CNV:
+      CPX:
+      CTX:
+      DEL:
+      DUP:
+      INS:
+      INS:ME:
+      INS:ME:ALU:
+      INS:ME:LINE1:
+      INS:ME:SVA:
+      INS:UNK:
+      INV:
+  Variant_reference_assemblyEnum:
+    permissible_values:
+      GRCh38:
+      CHM13:
+  ChromEnum:
+    permissible_values:
+      '1':
+      '2':
+      '3':
+      '4':
+      '5':
+      '6':
+      '7':
+      '8':
+      '9':
+      '10':
+      '11':
+      '12':
+      '13':
+      '14':
+      '15':
+      '16':
+      '17':
+      '18':
+      '19':
+      '20':
+      '21':
+      '22':
+      X:
+      Y:
+      MT:
+  Chrom_endEnum:
+    permissible_values:
+      '1':
+      '2':
+      '3':
+      '4':
+      '5':
+      '6':
+      '7':
+      '8':
+      '9':
+      '10':
+      '11':
+      '12':
+      '13':
+      '14':
+      '15':
+      '16':
+      '17':
+      '18':
+      '19':
+      '20':
+      '21':
+      '22':
+      X:
+      Y:
+      MT:
+  ZygosityEnum:
+    permissible_values:
+      Heterozygous:
+      Homozygous:
+      Hemizygous:
+      Heteroplasmy:
+      Homoplasmy:
+      Mosaic:
+      Unknown:
+  Variant_inheritanceEnum:
+    permissible_values:
+      de novo:
+      maternal:
+      paternal:
+      biparental:
+      nonmaternal:
+      nonpaternal:
+      unknown:
+  Linked_variant_phaseEnum:
+    permissible_values:
+      in trans:
+      in cis:
+      unknown:
+  Gene_known_for_phenotypeEnum:
+    permissible_values:
+      Known:
+      Candidate:
+  Condition_inheritanceEnum:
+    permissible_values:
+      Autosomal recessive:
+      Autosomal dominant:
+      X-linked:
+      Mitochondrial:
+      Y-linked:
+      Contiguous gene syndrome:
+      Somatic mosaicism:
+      Digenic:
+      Other:
+      Unknown:
+  Gregor_variant_classificationEnum:
+    permissible_values:
+      Benign:
+      Likely benign:
+      Uncertain significance - low:
+      Uncertain significance - moderate:
+      Uncertain significance - high:
+      Uncertain significance:
+      Likely pathogenic:
+      Pathogenic:
+      Curation in progress:
+      Well-established P/LP:
+  Gene_disease_validityEnum:
+    permissible_values:
+      Definitive:
+      Strong:
+      Moderate:
+      Limited:
+      Disputed:
+      Animal Model Only:
+      Refuted:
+  Phenotype_contributionEnum:
+    permissible_values:
+      Partial:
+      Full:
+      Uncertain:
+  Method_of_discoveryEnum:
+    permissible_values:
+      SR-ES:
+      SR-GS:
+      LR-GS:
+      SNP array:
+      Optical mapping:
+      Karyotype:
+      SR RNA-seq:
+      LR RNA-seq:
+      SR-ES-reanalysis:
+      SR-GS-reanalysis:
+      LR-GS-reanalysis:
+      SNP array-reanalysis:
+      Optical mapping-reanalysis:
+      Karyotype-reanalysis:
+      SR RNA-seq-reanalysis:
+      LR RNA-seq-reanalysis:
+  Analyte_typeEnum:
+    permissible_values:
+      DNA:
+      RNA:
+      cDNA:
+      blood plasma:
+      frozen whole blood:
+      high molecular weight DNA:
+      urine:
+  Primary_biosampleEnum:
+    permissible_values:
+      UBERON:0000479:
+      UBERON:0003714:
+      UBERON:0001836:
+      UBERON:0001003:
+      UBERON:0002385:
+      UBERON:0000178:
+      UBERON:0002371:
+      UBERON:0006956:
+      UBERON:0001359:
+      UBERON:0001088:
+      UBERON:0019306:
+      'CL: 0000034':
+      'CL: 0000576':
+      'CL: 0000542':
+      'CL: 0000057':
+      'UBERON: 0005291':
+      'CL: 0011020':
+      'UBERON: 0002037':
+      'UBERON: 0001133':
+  Tissue_affected_statusEnum:
+    permissible_values:
+      'Yes':
+      'No':
+  Table_nameEnum:
+    permissible_values:
+      aligned_dna_short_read:
+      aligned_rna_short_read:
+      aligned_nanopore:
+      aligned_pac_bio:
+      aligned_atac_short_read:
+  Experiment_typeEnum:
+    permissible_values:
+      targeted:
+      genome:
+      exome:
+  Reference_assemblyEnum:
+    permissible_values:
+      GRCh38:
+      GRCh37:
+      NCBI36:
+      NCBI35:
+      NCBI34:
+  Variant_typesEnum:
+    permissible_values:
+      SNV:
+      INDEL:
+      SV:
+      CNV:
+      RE:
+      MEI:
+      STR:
+  Library_prep_typeEnum:
+    permissible_values:
+      stranded poly-A pulldown:
+      stranded total RNA:
+      rRNA depletion:
+      globin depletion:
+  Single_or_paired_endsEnum:
+    permissible_values:
+      single-end:
+      paired-end:
+  Gene_annotation_detailsEnum:
+    permissible_values:
+      g:
+      e:
+      n:
+      c:
+      o:
+      d:
+      _:
+      m:
+      p:
+      r:
+      h:
+      s:
+      i:
+      v:
+      ' ':
+      a:
+      l:
+      b:
+      R:
+      N:
+      A:
+      t:
+      y:
+      f:
+      u:
+  Seq_library_prep_kit_methodEnum:
+    permissible_values:
+      SMRTbell prep kit 3.0:
+      HiFI express template prep kit 2.0:
+  Sequencing_platformEnum:
+    permissible_values:
+      PacBio Revio:
+      PacBio Sequel IIe:
+      PacBio Sequel II:
+  Chemistry_typeEnum:
+    permissible_values:
+      R9.4.1:
+      R10.4.1:
+  Application_kitEnum:
+    permissible_values:
+      MAS-Seq for 10x Single Cell 3' kit:
+      Iso-Seq express oligo kit:
+      SMRTbell gDNA amplification kit:
+  Peak_set_typeEnum:
+    permissible_values:
+      narrowPeak:
+      gappedPeak:
+      IDR:
+classes:
+  Participant:
+    description: Table containing participant information
+    slots:
+    - participant_id
+    - internal_project_id
+    - gregor_center
+    - consent_code
+    - recontactable
+    - prior_testing
+    - pmid_id
+    - family_id
+    - paternal_id
+    - maternal_id
+    - twin_id
+    - proband_relationship
+    - proband_relationship_detail
+    - sex
+    - sex_detail
+    - reported_race
+    - reported_ethnicity
+    - ancestry_detail
+    - age_at_last_observation
+    - affected_status
+    - phenotype_description
+    - age_at_enrollment
+    - solve_status
+    - missing_variant_case
+    - missing_variant_details
+  Family:
+    description: Table containing family information
+    slots:
+    - family_id
+    - consanguinity
+    - consanguinity_detail
+    - pedigree_file
+    - pedigree_file_detail
+    - family_history_detail
+  Phenotype:
+    description: Table containing phenotype information
+    slots:
+    - phenotype_id
+    - participant_id
+    - term_id
+    - presence
+    - ontology
+    - additional_details
+    - onset_age_range
+    - additional_modifiers
+    - syndromic
+  Genetic_findings:
+    description: Table containing genetic_findings information
+    slots:
+    - genetic_findings_id
+    - participant_id
+    - experiment_id
+    - variant_type
+    - sv_type
+    - variant_reference_assembly
+    - chrom
+    - chrom_end
+    - pos
+    - pos_end
+    - ref
+    - alt
+    - copy_number
+    - ClinGen_allele_ID
+    - gene_of_interest
+    - transcript
+    - hgvsc
+    - hgvsp
+    - hgvs
+    - zygosity
+    - allele_balance_or_heteroplasmy_percentage
+    - variant_inheritance
+    - linked_variant
+    - linked_variant_phase
+    - gene_known_for_phenotype
+    - known_condition_name
+    - condition_id
+    - condition_inheritance
+    - GREGoR_variant_classification
+    - GREGoR_ClinVar_SCV
+    - gene_disease_validity
+    - public_database_other
+    - public_database_ID_other
+    - phenotype_contribution
+    - partial_contribution_explained
+    - additional_family_members_with_variant
+    - method_of_discovery
+    - notes
+  Analyte:
+    description: Table containing analyte information
+    slots:
+    - analyte_id
+    - participant_id
+    - analyte_type
+    - analyte_processing_details
+    - primary_biosample
+    - primary_biosample_id
+    - primary_biosample_details
+    - tissue_affected_status
+    - age_at_collection
+    - participant_drugs_intake
+    - participant_special_diet
+    - hours_since_last_meal
+    - passage_number
+    - time_to_freeze
+    - sample_transformation_detail
+    - quality_issues
+  Experiment:
+    description: Table containing experiment information
+    slots:
+    - experiment_id
+    - table_name
+    - id_in_table
+    - participant_id
+  Aligned:
+    description: Table containing aligned information
+    slots:
+    - aligned_id
+    - table_name
+    - id_in_table
+    - participant_id
+    - aligned_file
+    - aligned_index_file
+  Experiment_dna_short_read:
+    description: Table containing experiment_dna_short_read information
+    slots:
+    - experiment_dna_short_read_id
+    - analyte_id
+    - experiment_sample_id
+    - seq_library_prep_kit_method
+    - read_length
+    - experiment_type
+    - targeted_regions_method
+    - targeted_region_bed_file
+    - date_data_generation
+    - target_insert_size
+    - sequencing_platform
+    - sequencing_event_details
+  Aligned_dna_short_read:
+    description: Table containing aligned_dna_short_read information
+    slots:
+    - aligned_dna_short_read_id
+    - experiment_dna_short_read_id
+    - aligned_dna_short_read_file
+    - aligned_dna_short_read_index_file
+    - md5sum
+    - reference_assembly
+    - reference_assembly_uri
+    - reference_assembly_details
+    - alignment_software
+    - mean_coverage
+    - analysis_details
+    - quality_issues
+  Aligned_dna_short_read_set:
+    description: Table containing aligned_dna_short_read_set information
+    slots:
+    - aligned_dna_short_read_set_id
+    - aligned_dna_short_read_id
+  Called_variants_dna_short_read:
+    description: Table containing called_variants_dna_short_read information
+    slots:
+    - called_variants_dna_short_read_id
+    - aligned_dna_short_read_set_id
+    - called_variants_dna_file
+    - md5sum
+    - caller_software
+    - variant_types
+    - analysis_details
+  Experiment_rna_short_read:
+    description: Table containing experiment_rna_short_read information
+    slots:
+    - experiment_rna_short_read_id
+    - analyte_id
+    - experiment_sample_id
+    - seq_library_prep_kit_method
+    - library_prep_type
+    - experiment_type
+    - read_length
+    - single_or_paired_ends
+    - date_data_generation
+    - sequencing_platform
+    - within_site_batch_name
+    - RIN
+    - estimated_library_size
+    - total_reads
+    - percent_rRNA
+    - percent_mRNA
+    - percent_mtRNA
+    - percent_Globin
+    - percent_UMI
+    - 5prime3prime_bias
+    - percent_GC
+    - percent_chrX_Y
+  Aligned_rna_short_read:
+    description: Table containing aligned_rna_short_read information
+    slots:
+    - aligned_rna_short_read_id
+    - experiment_rna_short_read_id
+    - aligned_rna_short_read_file
+    - aligned_rna_short_read_index_file
+    - md5sum
+    - reference_assembly
+    - reference_assembly_uri
+    - reference_assembly_details
+    - gene_annotation
+    - gene_annotation_details
+    - alignment_software
+    - alignment_log_file
+    - alignment_postprocessing
+    - mean_coverage
+    - percent_uniquely_aligned
+    - percent_multimapped
+    - percent_unaligned
+    - quality_issues
+  Experiment_nanopore:
+    description: Table containing experiment_nanopore information
+    slots:
+    - experiment_nanopore_id
+    - analyte_id
+    - experiment_sample_id
+    - seq_library_prep_kit_method
+    - fragmentation_method
+    - experiment_type
+    - targeted_regions_method
+    - targeted_region_bed_file
+    - date_data_generation
+    - sequencing_platform
+    - chemistry_type
+    - was_barcoded
+    - barcode_kit
+  Aligned_nanopore:
+    description: Table containing aligned_nanopore information
+    slots:
+    - aligned_nanopore_id
+    - experiment_nanopore_id
+    - aligned_nanopore_file
+    - aligned_nanopore_index_file
+    - md5sum
+    - reference_assembly
+    - alignment_software
+    - analysis_details
+    - mean_coverage
+    - genome_coverage
+    - contamination
+    - sex_concordance
+    - num_reads
+    - num_bases
+    - read_length_mean
+    - num_aligned_reads
+    - num_aligned_bases
+    - aligned_read_length_mean
+    - read_error_rate
+    - mapped_reads_pct
+    - methylation_called
+    - quality_issues
+  Aligned_nanopore_set:
+    description: Table containing aligned_nanopore_set information
+    slots:
+    - aligned_nanopore_set_id
+    - aligned_nanopore_id
+  Called_variants_nanopore:
+    description: Table containing called_variants_nanopore information
+    slots:
+    - called_variants_nanopore_id
+    - aligned_nanopore_set_id
+    - called_variants_dna_file
+    - md5sum
+    - caller_software
+    - variant_types
+    - analysis_details
+  Experiment_pac_bio:
+    description: Table containing experiment_pac_bio information
+    slots:
+    - experiment_pac_bio_id
+    - analyte_id
+    - experiment_sample_id
+    - seq_library_prep_kit_method
+    - fragmentation_method
+    - experiment_type
+    - targeted_regions_method
+    - targeted_region_bed_file
+    - date_data_generation
+    - sequencing_platform
+    - was_barcoded
+    - barcode_kit
+    - application_kit
+    - smrtlink_server_version
+    - instrument_ics_version
+    - size_selection_method
+    - library_size
+    - smrt_cell_kit
+    - smrt_cell_id
+    - movie_name
+    - polymerase_kit
+    - sequencing_kit
+    - movie_length_hours
+    - includes_kinetics
+    - includes_CpG_methylation
+    - by_strand
+  Aligned_pac_bio:
+    description: Table containing aligned_pac_bio information
+    slots:
+    - aligned_pac_bio_id
+    - experiment_pac_bio_id
+    - aligned_pac_bio_file
+    - aligned_pac_bio_index_file
+    - md5sum
+    - reference_assembly
+    - alignment_software
+    - analysis_details
+    - mean_coverage
+    - genome_coverage
+    - contamination
+    - sex_concordance
+    - num_reads
+    - num_bases
+    - read_length_mean
+    - num_aligned_reads
+    - num_aligned_bases
+    - aligned_read_length_mean
+    - read_error_rate
+    - mapped_reads_pct
+    - methylation_called
+  Aligned_pac_bio_set:
+    description: Table containing aligned_pac_bio_set information
+    slots:
+    - aligned_pac_bio_set_id
+    - aligned_pac_bio_id
+  Called_variants_pac_bio:
+    description: Table containing called_variants_pac_bio information
+    slots:
+    - called_variants_pac_bio_id
+    - aligned_pac_bio_set_id
+    - called_variants_dna_file
+    - md5sum
+    - caller_software
+    - variant_types
+    - analysis_details
+  Experiment_atac_short_read:
+    description: Table containing experiment_atac_short_read information
+    slots:
+    - experiment_atac_short_read_id
+    - analyte_id
+    - experiment_sample_id
+    - seq_library_prep_kit_method
+    - read_length
+    - experiment_type
+    - targeted_regions_method
+    - targeted_region_bed_file
+    - date_data_generation
+    - target_insert_size
+    - sequencing_platform
+  Aligned_atac_short_read:
+    description: Table containing aligned_atac_short_read information
+    slots:
+    - aligned_atac_short_read_id
+    - experiment_atac_short_read_id
+    - aligned_atac_short_read_file
+    - aligned_atac_short_read_index_file
+    - md5sum
+    - reference_assembly
+    - reference_assembly_uri
+    - reference_assembly_details
+    - alignment_software
+    - gene_annotation_details
+    - alignment_log_file
+    - alignment_postprocessing
+    - mean_coverage
+    - percent_uniquely_aligned
+    - percent_multimapped
+    - percent_unaligned
+  Called_peaks_atac_short_read:
+    description: Table containing called_peaks_atac_short_read information
+    slots:
+    - called_peaks_atac_short_read_id
+    - aligned_atac_short_read_id
+    - called_peaks_file
+    - peaks_md5sum
+    - peak_caller_software
+    - peak_set_type
+    - analysis_details
+  Allele_specific_atac_short_read:
+    description: Table containing allele_specific_atac_short_read information
+    slots:
+    - asc_atac_short_read_id
+    - called_peaks_atac_short_read_id
+    - asc_file
+    - asc_md5sum
+    - peak_set_type
+    - het_sites_file
+    - het_sites_md5sum
+    - analysis_details
+slots:
+  participant_id:
+    description: ''
+    range: string
+    required: true
+  internal_project_id:
+    description: An identifier used by GREGoR research centers to identify a set of
+      participants for their internal tracking
+    range: string
+    multivalued: true
+  gregor_center:
+    description: GREGoR Center to which the participant is originally associated
+    range: Gregor_centerEnum
+    required: true
+  consent_code:
+    description: Consent group pertaining to this participant's data
+    range: Consent_codeEnum
+    required: true
+  recontactable:
+    description: Is the originating GREGoR Center likely able to recontact this participant
+    range: RecontactableEnum
+  prior_testing:
+    description: Text description of any genetic testing for individual conducted
+      prior to enrollment
+    range: string
+    multivalued: true
+  pmid_id:
+    description: Case specific PubMed ID if applicable
+    range: string
+    multivalued: true
+  family_id:
+    description: Identifier for family (primary key)
+    range: string
+    required: true
+    identifier: true
+  paternal_id:
+    description: participant_id for father; 0 if not available
+    range: string
+    required: true
+  maternal_id:
+    description: participant_id for mother; 0 if not available
+    range: string
+    required: true
+  twin_id:
+    description: participant_id for twins, triplets, etc; 0 if not available
+    range: string
+    multivalued: true
+  proband_relationship:
+    description: Text description of individual relationship to proband in family,
+      especially useful to capture relationships when connecting distant relatives
+      and connecting relatives not studied
+    range: Proband_relationshipEnum
+    required: true
+  proband_relationship_detail:
+    description: Other proband relationship not captured in enumeration above
+    range: string
+  sex:
+    description: Biological sex assigned at birth (aligned with All of Us). If individual
+      has a known DSD / not expected sex chromosome karyotype, this can be noted in
+      the phenotype information section.
+    range: SexEnum
+    required: true
+  sex_detail:
+    description: Optional free-text field to describe known discrepancies between
+      'sex' value (female=>XX, male=>XY) and actual sex chromosome karyotype
+    range: string
+  reported_race:
+    description: Self/submitter-reported race (OMB categories)
+    range: Reported_raceEnum
+    multivalued: true
+  reported_ethnicity:
+    description: Self/submitter-reported ethnicity (OMB categories)
+    range: Reported_ethnicityEnum
+  ancestry_detail:
+    description: Additional specific ancestry description free text beyond what is
+      captured by OMB race/ethnicity categories
+    range: string
+  age_at_last_observation:
+    description: Age at last observation, aka age in years at the last time the center
+      can vouch for the accuracy phenotype data. For conditions with later age of
+      onset, this field lets users know if individuals marked as unaffected were younger
+      or older than the age when the phenotype is expected to appear.
+    range: float
+  affected_status:
+    description: 'Indicate affected status of individual (overall with respect to
+      primary phenotype in the family). Note: Affected participants must have entry
+      in phenotype table.'
+    range: Affected_statusEnum
+    required: true
+  phenotype_description:
+    description: human-readable 'Phenotypic one-line summary' for why this individual
+      is of interest. Could be the same as the term_details value in the Phenotype
+      table. Strongly encourage/required for proband.
+    range: string
+    multivalued: true
+  age_at_enrollment:
+    description: age in years at which consent was originally obtained
+    range: float
+  solve_status:
+    description: Indication of whether the submitting RC considers this case 'solved'
+    range: Solve_statusEnum
+    required: true
+  missing_variant_case:
+    description: Indication of whether this is known to be a missing variant case,
+      see notes for a description of the Missing Variant Project and inclusion criteria.
+    range: Missing_variant_caseEnum
+    required: true
+  missing_variant_details:
+    description: For missing variant cases, indicate gene(s) or region of interest
+      and reason for inclusion in MVP.
+    range: string
+  consanguinity:
+    description: Indicate if consanguinity is present or suspected within a family
+    range: ConsanguinityEnum
+    required: true
+  consanguinity_detail:
+    description: Free text description of any additional consanguinity details
+    range: string
+  pedigree_file:
+    description: name of file (renamed from pedigree_image because it can contain
+      a PED file or image)
+    range: string
+  pedigree_file_detail:
+    description: Free text description of other family structure/pedigree file caption
+      or legend.
+    range: string
+  family_history_detail:
+    description: Details about family history that do not fit into structured fields.
+      Family relationship terms should be relative to the proband.
+    range: string
+  phenotype_id:
+    description: primary key
+    range: string
+    identifier: true
+  term_id:
+    description: ''
+    range: string
+    required: true
+  presence:
+    description: ''
+    range: PresenceEnum
+    required: true
+  ontology:
+    description: ''
+    range: OntologyEnum
+    required: true
+  additional_details:
+    description: modifier of a term where the additional details are not supported/available
+      as a term in HPO
+    range: string
+  onset_age_range:
+    description: ''
+    range: Onset_age_rangeEnum
+  additional_modifiers:
+    description: ''
+    range: Additional_modifiersEnum
+    multivalued: true
+  syndromic:
+    description: For participants with few HPO terms, this optional field is to provide
+      context on whether it is likely the most notable phenotype or cohort level phenotype
+      or whether the individual really only has one trait.
+    range: SyndromicEnum
+  genetic_findings_id:
+    description: Unique ID of this variant in this participant (primary key)
+    range: string
+    required: true
+    identifier: true
+  experiment_id:
+    description: table_name.experiment_id_in_table
+    range: string
+    required: true
+    identifier: true
+  variant_type:
+    description: ''
+    range: Variant_typeEnum
+    required: true
+  sv_type:
+    description: ''
+    range: Sv_typeEnum
+  variant_reference_assembly:
+    description: The genome build for identifying the variant position
+    range: Variant_reference_assemblyEnum
+    required: true
+  chrom:
+    description: Chromosome of the variant
+    range: ChromEnum
+    required: true
+  chrom_end:
+    description: End position chromosome of SV
+    range: Chrom_endEnum
+  pos:
+    description: Start position of the variant
+    range: integer
+    required: true
+  pos_end:
+    description: End position of SV
+    range: integer
+  ref:
+    description: Reference allele of the variant
+    range: string
+    required: true
+  alt:
+    description: Alternate position of the variant
+    range: string
+    required: true
+  copy_number:
+    description: CNV copy number
+    range: integer
+  ClinGen_allele_ID:
+    description: ClinGen Allele ID for cross table refrence
+    range: string
+  gene_of_interest:
+    description: HGNC approved symbol of the known or candidate gene(s) that are relevant
+      for the observed phenotype.
+    range: string
+    required: true
+    multivalued: true
+  transcript:
+    description: Text description of transcript overlapping the variant
+    range: string
+  hgvsc:
+    description: HGVS c. description of the variant (m. for mitochondrial)
+    range: string
+  hgvsp:
+    description: HGVS p. description of the variant
+    range: string
+  hgvs:
+    description: genomic HGVS description of the variant
+    range: string
+  zygosity:
+    description: Zygosity of variant
+    range: ZygosityEnum
+    required: true
+  allele_balance_or_heteroplasmy_percentage:
+    description: Reported allele balance (mosaic) or heteroplasmy percentage (mitochondrial)
+    range: float
+  variant_inheritance:
+    description: Detection of variant in parents
+    range: Variant_inheritanceEnum
+  linked_variant:
+    description: Second variant in recessive cases
+    range: string
+  linked_variant_phase:
+    description: ''
+    range: Linked_variant_phaseEnum
+  gene_known_for_phenotype:
+    description: Indicate if the gene listed is a candidate or known disease gene.
+      Known disease genes can be identified using OMIM or MONDO or MitoMap. Variant/phenotype
+      in proband should be consistent with the described MOD/phenotype to be considered
+      a known gene for condition.
+    range: Gene_known_for_phenotypeEnum
+    required: true
+  known_condition_name:
+    description: Free text of condition name. Variant/phenotype/inheritance in proband
+      should be consistent with the condition.
+    range: string
+    required: true
+  condition_id:
+    description: MONDO/OMIM number for condition used for variant interpretation.
+    range: string
+    required: true
+  condition_inheritance:
+    description: Description of the expected inheritance of condition used for variant
+      interpretation
+    range: Condition_inheritanceEnum
+    required: true
+    multivalued: true
+  GREGoR_variant_classification:
+    description: Clinical significance of variant described to condition listed as
+      determined by the RC's variant curation.
+    range: Gregor_variant_classificationEnum
+  GREGoR_ClinVar_SCV:
+    description: ClinVar accession number for the variant curation submitted by your
+      center
+    range: string
+  gene_disease_validity:
+    description: Validity assessment of the gene-disease relationship
+    range: Gene_disease_validityEnum
+  public_database_other:
+    description: Public databases that this variant in this participant has been submitted
+      by the RC.
+    range: string
+    multivalued: true
+  public_database_ID_other:
+    description: Public database variant/case ID
+    range: string
+    multivalued: true
+  phenotype_contribution:
+    description: Contribution of variant-linked condition to participant's phenotype.
+    range: Phenotype_contributionEnum
+  partial_contribution_explained:
+    description: List of specific phenotypes (HPO IDs) explained by the condition
+      associated with this variant/gene in cases of partial contribution
+    range: string
+    required: true
+    multivalued: true
+  additional_family_members_with_variant:
+    description: List of related participant IDs carrying the same variant
+    range: string
+    multivalued: true
+  method_of_discovery:
+    description: The method/assay(s) used to identify the candidate
+    range: Method_of_discoveryEnum
+    multivalued: true
+  notes:
+    description: Free text field to explain edge cases or discovery updates or list
+      parallel experiment IDs or list parental allele balance when mosaic... etc.
+    range: string
+  analyte_id:
+    description: ''
+    range: string
+    required: true
+  analyte_type:
+    description: analyte derived from the primary_biosample. The actual thing you're
+      sticking into a machine to analyze/sequence
+    range: Analyte_typeEnum
+    required: true
+  analyte_processing_details:
+    description: details about how the analyte or original biosample was extracted
+      or processed
+    range: string
+  primary_biosample:
+    description: Tissue type of biosample taken from the participant that the analyte
+      was extracted or processed from (for unknown can use tissue - UBERON:0000479),
+      e.g. skin, liver, brain
+    range: Primary_biosampleEnum
+    required: true
+  primary_biosample_id:
+    description: Optional ID for the biosample; allows for linking of multiple analytes
+      extracted or processed from the same biosample
+    range: string
+  primary_biosample_details:
+    description: Free text to capture information not in structured fields
+    range: string
+  tissue_affected_status:
+    description: If applicable to disease (suspected mosaic), is the tissue from an
+      affected source or an unaffected source?
+    range: Tissue_affected_statusEnum
+  age_at_collection:
+    description: age or participant in years at biosample collection
+    range: float
+  participant_drugs_intake:
+    description: The list of drugs patient is on, at the time of sample collection.
+      This information is helpful during analysis of metabolomics and immune asssays.
+      Free Text
+    range: string
+  participant_special_diet:
+    description: If the patient was fasting, when the sample was collected. this is
+      relevant when analyzing metabolomics data. Free Text
+    range: string
+  hours_since_last_meal:
+    description: his is relevant when analyzing metabolomics data
+    range: float
+  passage_number:
+    description: passage_number is relevant for fibroblast cultures and possibly iPSC.
+    range: integer
+  time_to_freeze:
+    description: time (in hours) from collection to freezing the sample. delayed freeze
+      turns out to be useful / important info for PaxGene blood (for RNA isolation).
+    range: float
+  sample_transformation_detail:
+    description: details regarding sample transformation
+    range: string
+  quality_issues:
+    description: describe if there are any QC issues that would be important to note
+    range: string
+  table_name:
+    description: ''
+    range: Table_nameEnum
+    required: true
+  id_in_table:
+    description: ''
+    range: string
+    required: true
+  aligned_id:
+    description: table_name.aligned_id_in_table
+    range: string
+    required: true
+    identifier: true
+  aligned_file:
+    description: ''
+    range: string
+  aligned_index_file:
+    description: ''
+    range: string
+  experiment_dna_short_read_id:
+    description: identifier for experiment
+    range: string
+    required: true
+  experiment_sample_id:
+    description: identifier used in the data file (e.g. the SM tag in a BAM header,
+      column headers for genotype fields in a VCF file)
+    range: string
+  seq_library_prep_kit_method:
+    description: Library prep kit used
+    range: string
+  read_length:
+    description: sequenced read length (bp); GREGoR RCs do paired end sequencing,
+      so is the example of 100bp indicates 2x100bp.
+    range: integer
+  experiment_type:
+    description: ''
+    range: Experiment_typeEnum
+    required: true
+  targeted_regions_method:
+    description: Which capture kit is used. Can be missing if RC receives external
+      data
+    range: string
+  targeted_region_bed_file:
+    description: name and path of bed file uploaded to workspace
+    range: string
+  date_data_generation:
+    description: Date of data generation (First sequencing date)
+    range: date
+  target_insert_size:
+    description: insert size the protocol targets for DNA fragments
+    range: integer
+  sequencing_platform:
+    description: sequencing platform used for the experiment
+    range: string
+  sequencing_event_details:
+    description: describe if there are any sequencing-specific issues that would be
+      important to note
+    range: string
+  aligned_dna_short_read_id:
+    description: ''
+    range: string
+    required: true
+  aligned_dna_short_read_file:
+    description: name and path of file with aligned reads
+    range: string
+    required: true
+  aligned_dna_short_read_index_file:
+    description: name and path of index file corresponding to aligned reads file
+    range: string
+    required: true
+  md5sum:
+    description: md5 checksum for file
+    range: string
+    required: true
+  reference_assembly:
+    description: ''
+    range: Reference_assemblyEnum
+    required: true
+  reference_assembly_uri:
+    description: ''
+    range: string
+  reference_assembly_details:
+    description: ''
+    range: string
+  alignment_software:
+    description: Software including version number
+    range: string
+    required: true
+  mean_coverage:
+    description: Mean coverage of either the genome or the targeted regions
+    range: float
+  analysis_details:
+    description: brief description of the analysis pipeline used for producing the
+      asc_file; perhaps a link to something like a WDL file or github repository
+    range: string
+  aligned_dna_short_read_set_id:
+    description: identifier for experiment set
+    range: string
+    required: true
+  called_variants_dna_short_read_id:
+    description: unique key for table (anvil requirement)
+    range: string
+    identifier: true
+  called_variants_dna_file:
+    description: name and path of the file with variant calls
+    range: string
+    required: true
+  caller_software:
+    description: variant calling software used including version number
+    range: string
+    required: true
+    multivalued: true
+  variant_types:
+    description: types of variants called
+    range: string
+    required: true
+    multivalued: true
+  experiment_rna_short_read_id:
+    description: identifier for experiment
+    range: string
+    required: true
+  library_prep_type:
+    description: type of library prep
+    range: Library_prep_typeEnum
+    multivalued: true
+  single_or_paired_ends:
+    description: single or paired end
+    range: Single_or_paired_endsEnum
+    required: true
+  within_site_batch_name:
+    description: batch number for the site, important for future batch correction
+    range: string
+    required: true
+  RIN:
+    description: RIN number for quality of sample
+    range: float
+  estimated_library_size:
+    description: ''
+    range: float
+  total_reads:
+    description: total number of reads
+    range: float
+  percent_rRNA:
+    description: ''
+    range: float
+  percent_mRNA:
+    description: ''
+    range: float
+  percent_mtRNA:
+    description: ''
+    range: float
+  percent_Globin:
+    description: ''
+    range: float
+  percent_UMI:
+    description: ''
+    range: float
+  5prime3prime_bias:
+    description: ''
+    range: float
+  percent_GC:
+    description: ''
+    range: float
+  percent_chrX_Y:
+    description: ''
+    range: float
+  aligned_rna_short_read_id:
+    description: identifier for aligned_short_read (primary key)
+    range: string
+    required: true
+    identifier: true
+  aligned_rna_short_read_file:
+    description: name and path of file with aligned reads
+    range: string
+    required: true
+  aligned_rna_short_read_index_file:
+    description: name and path of index file corresponding to aligned reads file
+    range: string
+    required: true
+  gene_annotation:
+    description: annotation file used for alignment
+    range: string
+    required: true
+  gene_annotation_details:
+    description: ''
+    range: Gene_annotation_detailsEnum
+  alignment_log_file:
+    description: path of (log) file with all parameters for alignment software
+    range: string
+  alignment_postprocessing:
+    description: If any post processing was applied
+    range: string
+  percent_uniquely_aligned:
+    description: how many reads aligned to just one place
+    range: float
+  percent_multimapped:
+    description: how many reads aligned to multiple places
+    range: float
+  percent_unaligned:
+    description: how many reads didn't align
+    range: float
+  experiment_nanopore_id:
+    description: identifier for experiment
+    range: string
+    required: true
+  fragmentation_method:
+    description: method used for shearing/fragmentation
+    range: string
+  chemistry_type:
+    description: chemistry type used for the experiment
+    range: Chemistry_typeEnum
+  was_barcoded:
+    description: indicates whether samples were barcoded on this flowcell
+    range: boolean
+    required: true
+  barcode_kit:
+    description: Barcode kit used
+    range: string
+  aligned_nanopore_id:
+    description: ''
+    range: string
+    required: true
+  aligned_nanopore_file:
+    description: name and path of file with aligned reads
+    range: string
+    required: true
+  aligned_nanopore_index_file:
+    description: name and path of index file corresponding to aligned reads file
+    range: string
+    required: true
+  genome_coverage:
+    description: "e.g. \u226590% at 10x or 20x; per consortium decision"
+    range: integer
+  contamination:
+    description: Contamination level estimate., e.g. <1% (display raw fraction not
+      percent)
+    range: float
+  sex_concordance:
+    description: Comparison between reported sex vs genotype sex; Other if ploidy
+      NOT XX or XY and Other if sex at birth is not known, thus unable to perform
+      sex concordance
+    range: boolean
+  num_reads:
+    description: Total reads (before/ignoring alignment)
+    range: integer
+  num_bases:
+    description: Number of bases (before/ignoring alignment)
+    range: integer
+  read_length_mean:
+    description: Mean length of all reads (before/ignoring alignment)
+    range: integer
+  num_aligned_reads:
+    description: Total aligned reads
+    range: integer
+  num_aligned_bases:
+    description: Number of bases in aligned reads
+    range: integer
+  aligned_read_length_mean:
+    description: Mean length of aligned reads
+    range: integer
+  read_error_rate:
+    description: Mean empirical per-base error rate of aligned reads
+    range: float
+  mapped_reads_pct:
+    description: Number between 1 and 100, na
+    range: float
+  methylation_called:
+    description: Indicates whether 5mC methylation has been called and annotated in
+      the BAM file's MM and ML tags
+    range: boolean
+    required: true
+  aligned_nanopore_set_id:
+    description: identifier for experiment set
+    range: string
+    required: true
+  called_variants_nanopore_id:
+    description: unique key for table (anvil requirement)
+    range: string
+    identifier: true
+  experiment_pac_bio_id:
+    description: identifier for experiment
+    range: string
+    required: true
+  application_kit:
+    description: Library prep kits for special applications
+    range: Application_kitEnum
+  smrtlink_server_version:
+    description: Version number of PacBio SMRTLink software
+    range: string
+    required: true
+  instrument_ics_version:
+    description: Version number of PacBio instrument control software
+    range: string
+    required: true
+  size_selection_method:
+    description: library prep - method use for library size selection
+    range: string
+  library_size:
+    description: library prep - expected size of library from FemtoPulse
+    range: string
+  smrt_cell_kit:
+    description: sequencing - part number of the SMRT Cell
+    range: string
+  smrt_cell_id:
+    description: sequencing - unique serial number for SMRT Cell
+    range: string
+  movie_name:
+    description: sequencing - unique name of sequencing collection
+    range: string
+  polymerase_kit:
+    description: sequencing - part number of polymerase kit used
+    range: string
+  sequencing_kit:
+    description: sequencing - part number of sequencing kit reagents
+    range: string
+  movie_length_hours:
+    description: sequencing - length of sequencing collection, in hrs
+    range: float
+  includes_kinetics:
+    description: run reports base kinetics
+    range: boolean
+  includes_CpG_methylation:
+    description: run reports CpG methylation
+    range: boolean
+  by_strand:
+    description: run reports separate reads per strand
+    range: boolean
+  aligned_pac_bio_id:
+    description: ''
+    range: string
+    required: true
+  aligned_pac_bio_file:
+    description: name and path of file with aligned reads
+    range: string
+    required: true
+  aligned_pac_bio_index_file:
+    description: name and path of index file corresponding to aligned reads file
+    range: string
+    required: true
+  aligned_pac_bio_set_id:
+    description: identifier for experiment set
+    range: string
+    required: true
+  called_variants_pac_bio_id:
+    description: unique key for table (anvil requirement)
+    range: string
+    identifier: true
+  experiment_atac_short_read_id:
+    description: identifier for experiment
+    range: string
+    required: true
+  aligned_atac_short_read_id:
+    description: identifier for aligned ATAC-seq data
+    range: string
+    required: true
+  aligned_atac_short_read_file:
+    description: name and path of file with aligned reads
+    range: string
+    required: true
+  aligned_atac_short_read_index_file:
+    description: name and path of index file corresponding to aligned reads file
+    range: string
+    required: true
+  called_peaks_atac_short_read_id:
+    description: identifier for called peaks
+    range: string
+    required: true
+  called_peaks_file:
+    description: name and path of the bed file with open chromatin peaks after QC
+      filtering
+    range: string
+    required: true
+  peaks_md5sum:
+    description: md5 checksum for called_peaks_file
+    range: string
+    required: true
+  peak_caller_software:
+    description: peak calling software used including version number
+    range: string
+    required: true
+    multivalued: true
+  peak_set_type:
+    description: peak set type, according to ENCODE descriptors
+    range: Peak_set_typeEnum
+    required: true
+  asc_atac_short_read_id:
+    description: unique key for table (anvil requirement)
+    range: string
+  asc_file:
+    description: name and path of the tsv file with allele-specific chromatin accessibility
+      measures (logFC) at heterozygous sites after QC and significance testing
+    range: string
+    required: true
+  asc_md5sum:
+    description: md5 checksum for called_peaks_file
+    range: string
+    required: true
+  het_sites_file:
+    description: VCF file containing prefiltered heterozygous sites used for reference
+      alignment bias testing and calling allele-specific chromatin accessibility events
+    range: string
+    required: true
+  het_sites_md5sum:
+    description: md5 checksum for het_sites_file
+    range: string
+    required: true
+
