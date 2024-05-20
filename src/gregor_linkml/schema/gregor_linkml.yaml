@@ -21,10 +21,6 @@ default_range: string
 imports:
   - linkml:types
 
-id: https://example.org/gregor
-name: GREGoR-Data-Model
-version: '1.5'
-description: Data model for the GREGoR consortium
 enums:
   Gregor_centerEnum:
     permissible_values:
