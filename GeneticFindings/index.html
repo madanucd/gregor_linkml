@@ -1,0 +1,1151 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://madanucd.github.io/gregor_linkml/GeneticFindings/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: GeneticFindings - gregor_linkml</title>
+<link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-geneticfindings">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="gregor_linkml" class="md-header__button md-logo" data-md-component="logo" href=".." title="gregor_linkml">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            gregor_linkml
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: GeneticFindings
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/madanucd/gregor_linkml" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="gregor_linkml" class="md-nav__button md-logo" data-md-component="logo" href=".." title="gregor_linkml">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    gregor_linkml
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/madanucd/gregor_linkml" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+    Schema Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+    Induced
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/madanucd/gregor_linkml/edit/master/docs/GeneticFindings.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="class-geneticfindings">Class: GeneticFindings</h1>
+<p><em>Table containing genetic_findings information</em></p>
+<p>URI: <a href="https://w3id.org/madanucd/gregor_linkml/GeneticFindings">gregor_linkml:GeneticFindings</a></p>
+<div class="mermaid"> classDiagram
+    class GeneticFindings
+    click GeneticFindings href "../GeneticFindings"
+      GeneticFindings : additional_family_members_with_variant
+
+      GeneticFindings : allele_balance_or_heteroplasmy_percentage
+
+      GeneticFindings : alt
+
+      GeneticFindings : chrom
+
+
+
+
+    GeneticFindings --&gt; "1" ChromEnum : chrom
+    click ChromEnum href "../ChromEnum"
+
+
+      GeneticFindings : chrom_end
+
+
+
+
+    GeneticFindings --&gt; "0..1" ChromEndEnum : chrom_end
+    click ChromEndEnum href "../ChromEndEnum"
+
+
+      GeneticFindings : ClinGen_allele_ID
+
+      GeneticFindings : condition_id
+
+      GeneticFindings : condition_inheritance
+
+
+
+
+    GeneticFindings --&gt; "1..*" ConditionInheritanceEnum : condition_inheritance
+    click ConditionInheritanceEnum href "../ConditionInheritanceEnum"
+
+
+      GeneticFindings : copy_number
+
+      GeneticFindings : experiment_id
+
+      GeneticFindings : gene_disease_validity
+
+
+
+
+    GeneticFindings --&gt; "0..1" GeneDiseaseValidityEnum : gene_disease_validity
+    click GeneDiseaseValidityEnum href "../GeneDiseaseValidityEnum"
+
+
+      GeneticFindings : gene_known_for_phenotype
+
+
+
+
+    GeneticFindings --&gt; "1" GeneKnownForPhenotypeEnum : gene_known_for_phenotype
+    click GeneKnownForPhenotypeEnum href "../GeneKnownForPhenotypeEnum"
+
+
+      GeneticFindings : gene_of_interest
+
+      GeneticFindings : genetic_findings_id
+
+      GeneticFindings : GREGoR_ClinVar_SCV
+
+      GeneticFindings : GREGoR_variant_classification
+
+
+
+
+    GeneticFindings --&gt; "0..1" GregorVariantClassificationEnum : GREGoR_variant_classification
+    click GregorVariantClassificationEnum href "../GregorVariantClassificationEnum"
+
+
+      GeneticFindings : hgvs
+
+      GeneticFindings : hgvsc
+
+      GeneticFindings : hgvsp
+
+      GeneticFindings : known_condition_name
+
+      GeneticFindings : linked_variant
+
+      GeneticFindings : linked_variant_phase
+
+
+
+
+    GeneticFindings --&gt; "0..1" LinkedVariantPhaseEnum : linked_variant_phase
+    click LinkedVariantPhaseEnum href "../LinkedVariantPhaseEnum"
+
+
+      GeneticFindings : method_of_discovery
+
+
+
+
+    GeneticFindings --&gt; "*" MethodOfDiscoveryEnum : method_of_discovery
+    click MethodOfDiscoveryEnum href "../MethodOfDiscoveryEnum"
+
+
+      GeneticFindings : notes
+
+      GeneticFindings : partial_contribution_explained
+
+      GeneticFindings : participant_id
+
+      GeneticFindings : phenotype_contribution
+
+
+
+
+    GeneticFindings --&gt; "0..1" PhenotypeContributionEnum : phenotype_contribution
+    click PhenotypeContributionEnum href "../PhenotypeContributionEnum"
+
+
+      GeneticFindings : pos
+
+      GeneticFindings : pos_end
+
+      GeneticFindings : public_database_ID_other
+
+      GeneticFindings : public_database_other
+
+      GeneticFindings : ref
+
+      GeneticFindings : sv_type
+
+
+
+
+    GeneticFindings --&gt; "0..1" SvTypeEnum : sv_type
+    click SvTypeEnum href "../SvTypeEnum"
+
+
+      GeneticFindings : transcript
+
+      GeneticFindings : variant_inheritance
+
+
+
+
+    GeneticFindings --&gt; "0..1" VariantInheritanceEnum : variant_inheritance
+    click VariantInheritanceEnum href "../VariantInheritanceEnum"
+
+
+      GeneticFindings : variant_reference_assembly
+
+
+
+
+    GeneticFindings --&gt; "1" VariantReferenceAssemblyEnum : variant_reference_assembly
+    click VariantReferenceAssemblyEnum href "../VariantReferenceAssemblyEnum"
+
+
+      GeneticFindings : variant_type
+
+
+
+
+    GeneticFindings --&gt; "1" VariantTypeEnum : variant_type
+    click VariantTypeEnum href "../VariantTypeEnum"
+
+
+      GeneticFindings : zygosity
+
+
+
+
+    GeneticFindings --&gt; "1" ZygosityEnum : zygosity
+    click ZygosityEnum href "../ZygosityEnum"
+
+
+
+</div>
+<!-- no inheritance hierarchy -->
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../genetic_findings_id/">genetic_findings_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique ID of this variant in this participant (primary key)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../participant_id/">participant_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../experiment_id/">experiment_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>table_name</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../variant_type/">variant_type</a></td>
+<td>1 <br/> <a href="../VariantTypeEnum/">VariantTypeEnum</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sv_type/">sv_type</a></td>
+<td>0..1 <br/> <a href="../SvTypeEnum/">SvTypeEnum</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../variant_reference_assembly/">variant_reference_assembly</a></td>
+<td>1 <br/> <a href="../VariantReferenceAssemblyEnum/">VariantReferenceAssemblyEnum</a></td>
+<td>The genome build for identifying the variant position</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chrom/">chrom</a></td>
+<td>1 <br/> <a href="../ChromEnum/">ChromEnum</a></td>
+<td>Chromosome of the variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chrom_end/">chrom_end</a></td>
+<td>0..1 <br/> <a href="../ChromEndEnum/">ChromEndEnum</a></td>
+<td>End position chromosome of SV</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../pos/">pos</a></td>
+<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../pos_end/">pos_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of SV</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ref/">ref</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Reference allele of the variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../alt/">alt</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Alternate position of the variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../copy_number/">copy_number</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>CNV copy number</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ClinGen_allele_ID/">ClinGen_allele_ID</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>ClinGen Allele ID for cross table refrence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gene_of_interest/">gene_of_interest</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>HGNC approved symbol of the known or candidate gene(s) that are relevant for ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../transcript/">transcript</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Text description of transcript overlapping the variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hgvsc/">hgvsc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>HGVS c</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hgvsp/">hgvsp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>HGVS p</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hgvs/">hgvs</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>genomic HGVS description of the variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../zygosity/">zygosity</a></td>
+<td>1 <br/> <a href="../ZygosityEnum/">ZygosityEnum</a></td>
+<td>Zygosity of variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../allele_balance_or_heteroplasmy_percentage/">allele_balance_or_heteroplasmy_percentage</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Reported allele balance (mosaic) or heteroplasmy percentage (mitochondrial)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../variant_inheritance/">variant_inheritance</a></td>
+<td>0..1 <br/> <a href="../VariantInheritanceEnum/">VariantInheritanceEnum</a></td>
+<td>Detection of variant in parents</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../linked_variant/">linked_variant</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Second variant in recessive cases</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../linked_variant_phase/">linked_variant_phase</a></td>
+<td>0..1 <br/> <a href="../LinkedVariantPhaseEnum/">LinkedVariantPhaseEnum</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gene_known_for_phenotype/">gene_known_for_phenotype</a></td>
+<td>1 <br/> <a href="../GeneKnownForPhenotypeEnum/">GeneKnownForPhenotypeEnum</a></td>
+<td>Indicate if the gene listed is a candidate or known disease gene</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../known_condition_name/">known_condition_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Free text of condition name</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../condition_id/">condition_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>MONDO/OMIM number for condition used for variant interpretation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../condition_inheritance/">condition_inheritance</a></td>
+<td>1..* <br/> <a href="../ConditionInheritanceEnum/">ConditionInheritanceEnum</a></td>
+<td>Description of the expected inheritance of condition used for variant interpr...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../GREGoR_variant_classification/">GREGoR_variant_classification</a></td>
+<td>0..1 <br/> <a href="../GregorVariantClassificationEnum/">GregorVariantClassificationEnum</a></td>
+<td>Clinical significance of variant described to condition listed as determined ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../GREGoR_ClinVar_SCV/">GREGoR_ClinVar_SCV</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>ClinVar accession number for the variant curation submitted by your center</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gene_disease_validity/">gene_disease_validity</a></td>
+<td>0..1 <br/> <a href="../GeneDiseaseValidityEnum/">GeneDiseaseValidityEnum</a></td>
+<td>Validity assessment of the gene-disease relationship</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../public_database_other/">public_database_other</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Public databases that this variant in this participant has been submitted by ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../public_database_ID_other/">public_database_ID_other</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Public database variant/case ID</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../phenotype_contribution/">phenotype_contribution</a></td>
+<td>0..1 <br/> <a href="../PhenotypeContributionEnum/">PhenotypeContributionEnum</a></td>
+<td>Contribution of variant-linked condition to participant's phenotype</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../partial_contribution_explained/">partial_contribution_explained</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>List of specific phenotypes (HPO IDs) explained by the condition associated w...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../additional_family_members_with_variant/">additional_family_members_with_variant</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>List of related participant IDs carrying the same variant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../method_of_discovery/">method_of_discovery</a></td>
+<td>* <br/> <a href="../MethodOfDiscoveryEnum/">MethodOfDiscoveryEnum</a></td>
+<td>The method/assay(s) used to identify the candidate</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../notes/">notes</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Free text field to explain edge cases or discovery updates or list parallel e...</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/madanucd/gregor_linkml</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>gregor_linkml:GeneticFindings</td>
+</tr>
+<tr>
+<td>native</td>
+<td>gregor_linkml:GeneticFindings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: Genetic_findings
+description: Table containing genetic_findings information
+from_schema: https://w3id.org/madanucd/gregor_linkml
+slots:
+- genetic_findings_id
+- participant_id
+- experiment_id
+- variant_type
+- sv_type
+- variant_reference_assembly
+- chrom
+- chrom_end
+- pos
+- pos_end
+- ref
+- alt
+- copy_number
+- ClinGen_allele_ID
+- gene_of_interest
+- transcript
+- hgvsc
+- hgvsp
+- hgvs
+- zygosity
+- allele_balance_or_heteroplasmy_percentage
+- variant_inheritance
+- linked_variant
+- linked_variant_phase
+- gene_known_for_phenotype
+- known_condition_name
+- condition_id
+- condition_inheritance
+- GREGoR_variant_classification
+- GREGoR_ClinVar_SCV
+- gene_disease_validity
+- public_database_other
+- public_database_ID_other
+- phenotype_contribution
+- partial_contribution_explained
+- additional_family_members_with_variant
+- method_of_discovery
+- notes
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: Genetic_findings
+description: Table containing genetic_findings information
+from_schema: https://w3id.org/madanucd/gregor_linkml
+attributes:
+  genetic_findings_id:
+    name: genetic_findings_id
+    description: Unique ID of this variant in this participant (primary key)
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    identifier: true
+    alias: genetic_findings_id
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+    required: true
+  participant_id:
+    name: participant_id
+    description: ''
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: participant_id
+    owner: Genetic_findings
+    domain_of:
+    - Participant
+    - Phenotype
+    - Genetic_findings
+    - Analyte
+    - Experiment
+    - Aligned
+    range: string
+    required: true
+  experiment_id:
+    name: experiment_id
+    description: table_name.experiment_id_in_table
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    identifier: true
+    alias: experiment_id
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    - Experiment
+    range: string
+    required: true
+  variant_type:
+    name: variant_type
+    description: ''
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: variant_type
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Variant_typeEnum
+    required: true
+  sv_type:
+    name: sv_type
+    description: ''
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: sv_type
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Sv_typeEnum
+  variant_reference_assembly:
+    name: variant_reference_assembly
+    description: The genome build for identifying the variant position
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: variant_reference_assembly
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Variant_reference_assemblyEnum
+    required: true
+  chrom:
+    name: chrom
+    description: Chromosome of the variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: chrom
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: ChromEnum
+    required: true
+  chrom_end:
+    name: chrom_end
+    description: End position chromosome of SV
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: chrom_end
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Chrom_endEnum
+  pos:
+    name: pos
+    description: Start position of the variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: pos
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: integer
+    required: true
+  pos_end:
+    name: pos_end
+    description: End position of SV
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: pos_end
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: integer
+  ref:
+    name: ref
+    description: Reference allele of the variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: ref
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+    required: true
+  alt:
+    name: alt
+    description: Alternate position of the variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: alt
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+    required: true
+  copy_number:
+    name: copy_number
+    description: CNV copy number
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: copy_number
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: integer
+  ClinGen_allele_ID:
+    name: ClinGen_allele_ID
+    description: ClinGen Allele ID for cross table refrence
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: ClinGen_allele_ID
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  gene_of_interest:
+    name: gene_of_interest
+    description: HGNC approved symbol of the known or candidate gene(s) that are relevant
+      for the observed phenotype.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    multivalued: true
+    alias: gene_of_interest
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+    required: true
+  transcript:
+    name: transcript
+    description: Text description of transcript overlapping the variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: transcript
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  hgvsc:
+    name: hgvsc
+    description: HGVS c. description of the variant (m. for mitochondrial)
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: hgvsc
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  hgvsp:
+    name: hgvsp
+    description: HGVS p. description of the variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: hgvsp
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  hgvs:
+    name: hgvs
+    description: genomic HGVS description of the variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: hgvs
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  zygosity:
+    name: zygosity
+    description: Zygosity of variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: zygosity
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: ZygosityEnum
+    required: true
+  allele_balance_or_heteroplasmy_percentage:
+    name: allele_balance_or_heteroplasmy_percentage
+    description: Reported allele balance (mosaic) or heteroplasmy percentage (mitochondrial)
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: allele_balance_or_heteroplasmy_percentage
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: float
+  variant_inheritance:
+    name: variant_inheritance
+    description: Detection of variant in parents
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: variant_inheritance
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Variant_inheritanceEnum
+  linked_variant:
+    name: linked_variant
+    description: Second variant in recessive cases
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: linked_variant
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  linked_variant_phase:
+    name: linked_variant_phase
+    description: ''
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: linked_variant_phase
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Linked_variant_phaseEnum
+  gene_known_for_phenotype:
+    name: gene_known_for_phenotype
+    description: Indicate if the gene listed is a candidate or known disease gene.
+      Known disease genes can be identified using OMIM or MONDO or MitoMap. Variant/phenotype
+      in proband should be consistent with the described MOD/phenotype to be considered
+      a known gene for condition.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: gene_known_for_phenotype
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Gene_known_for_phenotypeEnum
+    required: true
+  known_condition_name:
+    name: known_condition_name
+    description: Free text of condition name. Variant/phenotype/inheritance in proband
+      should be consistent with the condition.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: known_condition_name
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+    required: true
+  condition_id:
+    name: condition_id
+    description: MONDO/OMIM number for condition used for variant interpretation.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: condition_id
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+    required: true
+  condition_inheritance:
+    name: condition_inheritance
+    description: Description of the expected inheritance of condition used for variant
+      interpretation
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    multivalued: true
+    alias: condition_inheritance
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Condition_inheritanceEnum
+    required: true
+  GREGoR_variant_classification:
+    name: GREGoR_variant_classification
+    description: Clinical significance of variant described to condition listed as
+      determined by the RC's variant curation.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: GREGoR_variant_classification
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Gregor_variant_classificationEnum
+  GREGoR_ClinVar_SCV:
+    name: GREGoR_ClinVar_SCV
+    description: ClinVar accession number for the variant curation submitted by your
+      center
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: GREGoR_ClinVar_SCV
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  gene_disease_validity:
+    name: gene_disease_validity
+    description: Validity assessment of the gene-disease relationship
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: gene_disease_validity
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Gene_disease_validityEnum
+  public_database_other:
+    name: public_database_other
+    description: Public databases that this variant in this participant has been submitted
+      by the RC.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    multivalued: true
+    alias: public_database_other
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  public_database_ID_other:
+    name: public_database_ID_other
+    description: Public database variant/case ID
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    multivalued: true
+    alias: public_database_ID_other
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  phenotype_contribution:
+    name: phenotype_contribution
+    description: Contribution of variant-linked condition to participant's phenotype.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: phenotype_contribution
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Phenotype_contributionEnum
+  partial_contribution_explained:
+    name: partial_contribution_explained
+    description: List of specific phenotypes (HPO IDs) explained by the condition
+      associated with this variant/gene in cases of partial contribution
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    multivalued: true
+    alias: partial_contribution_explained
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+    required: true
+  additional_family_members_with_variant:
+    name: additional_family_members_with_variant
+    description: List of related participant IDs carrying the same variant
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    multivalued: true
+    alias: additional_family_members_with_variant
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+  method_of_discovery:
+    name: method_of_discovery
+    description: The method/assay(s) used to identify the candidate
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    multivalued: true
+    alias: method_of_discovery
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: Method_of_discoveryEnum
+  notes:
+    name: notes
+    description: Free text field to explain edge cases or discovery updates or list
+      parallel experiment IDs or list parental allele balance when mosaic... etc.
+    from_schema: https://w3id.org/madanucd/gregor_linkml
+    rank: 1000
+    alias: notes
+    owner: Genetic_findings
+    domain_of:
+    - Genetic_findings
+    range: string
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+</html>
